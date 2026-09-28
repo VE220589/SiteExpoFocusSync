@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focusync | Sincronización y Enfoque Productivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#eef2ff",
+              100: "#e0e7ff",
+              500: "#6366f1",
+              600: "#4f46e5",
+              700: "#4338ca",
+              900: "#1e1b4b",
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .phone-mockup {
+      box-shadow:
+        0 25px 50px -12px rgba(15, 23, 42, 0.25),
+        0 0 0 12px #1e293b,
+        0 0 0 14px #475569;
+    }
+    @keyframes laserScan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0;
+  }
+}
+
+.animate-laser {
+  animation: laserScan 2.4s ease-in-out infinite alternate;
+}
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+  <!-- ==================== NAVEGACIÓN ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-40 glassmorphism border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logotipo -->
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-brand-500/30">
+          <i data-lucide="zap" class="w-5 h-5"></i>
+        </div>
+        <span class="font-extrabold text-xl tracking-tight text-slate-900">Focusync</span>
+      </div>
+
+      <!-- Menú de Escritorio (oculto en móvil) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#problema" class="hover:text-brand-600 transition-colors">Propósito</a>
+        <a href="#solucion" class="hover:text-brand-600 transition-colors">Funcionalidades</a>
+        <a href="#demo" class="hover:text-brand-600 transition-colors">Evidencias</a>
+        <a href="#tecnologia" class="hover:text-brand-600 transition-colors">Tecnología</a>
+        <a href="#equipo" class="hover:text-brand-600 transition-colors">Equipo</a>
+      </nav>
+
+      <!-- Botón Contacto Escritorio -->
+      <div class="hidden md:flex items-center">
+        <a href="#contacto" class="bg-slate-900 hover:bg-slate-800 text-white text-xs md:text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition-all">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Botón Hamburguesa Móvil (visible solo en móvil) -->
+      <button 
+        type="button" 
+        onclick="openMobileMenu()" 
+        class="md:hidden p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+        aria-label="Abrir menú de navegación"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold">
+          <span class="flex h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+          Proyecto de Aplicación Móvil
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
+          Recupera tu concentración,
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-500">sincroniza tu
+            progreso</span>.
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
+          <strong>Focusync</strong> es una aplicación móvil que combina
+          Inteligencia Artificial e IoT para crear planes de estudio personalizados y detectar automáticamente cuándo te
+          distraes. (<em>Deep Work</em>) con seguimiento automatizado de hábitos.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#demo"
+            class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-brand-600/20 transition-all">
+            <i data-lucide="play-circle" class="w-5 h-5"></i>
+            Ver Demostración
+          </a>
+          <a href="https://github.com" target="_blank"
+            class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-medium px-6 py-3 rounded-xl shadow-sm transition-all">
+            <i data-lucide="github" class="w-5 h-5"></i>
+            Código en GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- MOCKUP DEL TELÉFONO INTERACTIVO (FOCUSYNC FIEL A LA APP) -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div
+          class="phone-mockup relative w-[310px] h-[640px] bg-slate-900 rounded-[48px] overflow-hidden p-3 border border-slate-700 shadow-2xl">
+          <!-- Dynamic Island / Parlante superior -->
+          <div class="w-24 h-4 bg-black rounded-full mx-auto mb-2"></div>
+
+          <!-- PANTALLA DE LA APP (Fondo azul noche exacto de la captura) -->
+          <div
+            class="bg-[#101626] h-[585px] rounded-[38px] text-white flex flex-col justify-between overflow-hidden relative select-none">
+            <!-- 1. Barra de estado superior (Android / MIUI style) -->
+            <div class="px-5 pt-3 flex justify-between items-center text-[11px] text-slate-300 font-medium">
+              <span>7:43 <span class="text-[9px] text-slate-400">•••</span></span>
+              <div class="flex items-center gap-1.5 text-xs">
+                <i data-lucide="bluetooth" class="w-3 h-3 text-slate-300"></i>
+                <i data-lucide="bell-off" class="w-3 h-3 text-slate-300"></i>
+                <i data-lucide="wifi" class="w-3 h-3 text-slate-300"></i>
+                <i data-lucide="signal" class="w-3 h-3 text-slate-300"></i>
+                <span
+                  class="text-[10px] bg-slate-800/80 px-1 py-0.2 rounded font-mono border border-slate-700">64</span>
+              </div>
+            </div>
+
+            <!-- 2. Header de la Pantalla -->
+            <div class="px-5 pt-4">
+              <div class="relative flex items-center justify-center">
+                <button class="absolute left-0 text-slate-300 hover:text-white p-1">
+                  <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <div class="text-center">
+                  <h3 class="font-bold text-base text-white tracking-wide">
+                    Modo Enfoque
+                  </h3>
+                  <p class="text-[11px] text-slate-400">
+                    Bloque cargado: 45 min
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Área Central: Cronómetro, Sensor y Botón -->
+            <div class="flex-1 flex flex-col items-center justify-center px-6 -mt-4 space-y-7">
+              <!-- Timer Gigante idéntico -->
+              <div class="text-6xl font-normal tracking-wider text-white font-sans tabular-nums text-center"
+                id="timerDisplay">
+                45 : 00
+              </div>
+
+              <!-- Píldora de Sensores -->
+              <div id="sensorPill"
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#16272b] border border-[#1d3d3a] text-[#34d399] text-xs font-medium transition-all shadow-sm">
+                <span id="sensorDot" class="w-2 h-2 rounded-full bg-[#22c55e]"></span>
+                <span id="sensorText">Sensores preparados</span>
+              </div>
+
+              <!-- Botón Iniciar / Pausar -->
+              <button onclick="toggleTimer()" id="timerBtn"
+                class="w-full py-3.5 bg-[#5256e8] hover:bg-[#4347d9] text-white rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-indigo-600/30 transition-all active:scale-[0.98]">
+                <i data-lucide="play" id="btnIcon" class="w-4 h-4 fill-white"></i>
+                <span id="btnText">Iniciar bloque</span>
+              </button>
+            </div>
+
+            <!-- 4. Bottom Navigation Bar + Home Bar -->
+            <div class="bg-[#0b0f1a] pt-3 pb-2 px-3 border-t border-slate-800/80">
+              <div class="grid grid-cols-5 text-center items-center">
+                <!-- Tab 1: Dashboard -->
+                <div class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+                  <i data-lucide="home" class="w-5 h-5"></i>
+                  <span class="text-[9px]">Dashboard</span>
+                </div>
+
+                <!-- Tab 2: IA Coach -->
+                <div class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+                  <i data-lucide="bot" class="w-5 h-5"></i>
+                  <span class="text-[9px]">IA Coach</span>
+                </div>
+
+                <!-- Tab 3: Enfoque (Activo) -->
+                <div class="flex flex-col items-center gap-1 text-[#6366f1] cursor-pointer">
+                  <div class="w-8 h-8 rounded-full bg-[#1e204a] flex items-center justify-center -my-1">
+                    <i data-lucide="timer" class="w-5 h-5 text-[#6366f1]"></i>
+                  </div>
+                  <span class="text-[9px] font-semibold text-[#6366f1]">Enfoque</span>
+                </div>
+
+                <!-- Tab 4: Historial -->
+                <div class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                  <span class="text-[9px]">Historial</span>
+                </div>
+
+                <!-- Tab 5: Logros -->
+                <div class="flex flex-col items-center gap-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+                  <i data-lucide="trophy" class="w-5 h-5"></i>
+                  <span class="text-[9px]">Logros</span>
+                </div>
+              </div>
+
+              <!-- Línea gestual inferior de Android / iOS -->
+              <div class="w-28 h-1 bg-slate-300/80 rounded-full mx-auto mt-3 mb-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problema" class="py-16 bg-white border-y border-slate-200 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">
+          Problema Real
+        </h2>
+        <p class="text-3xl font-black text-slate-900">
+          ¿Por qué nace Focusync?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-2xl bg-rose-50/60 border border-rose-100 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-rose-600">
+            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">
+            El Problema: Sobrecarga y Dispersión
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Las constantes interrupciones digitales, la falta de estructuras
+            de tiempo y la desconexión entre metas a largo plazo y tareas
+            diarias generan procrastinación crónica y agotamiento mental
+            durante jornadas de estudio o programación.
+          </p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-emerald-50/60 border border-emerald-100 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">A Quién Beneficia</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Especialmente diseñado para
+            <strong>estudiantes universitarios de carreras técnicas</strong>,
+            desarrolladores y trabajadores independientes que necesitan
+            optimizar su tiempo en proyectos de alta demanda cognitiva sin
+            fricción en el seguimiento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FUNCIONALIDADES CON IMÁGENES ==================== -->
+  <!-- ==================== MÓDULOS DE LA APP CON MARCOS DE SMARTPHONE ==================== -->
+  <section id="solucion" class="py-24 px-6 max-w-7xl mx-auto">
+    <!-- Encabezado de la sección -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span
+        class="text-xs font-extrabold text-brand-600 uppercase tracking-widest bg-brand-50 border border-brand-100 px-3.5 py-1.5 rounded-full inline-block mb-3">
+        Módulos Principales
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-snug">
+        Una solución clara para un enfoque sencillo y eficiente de estudio
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
+        Explora las pantallas reales de <strong>Focusync</strong> diseñadas para acompañar cada etapa de tu jornada
+        académica.
+      </p>
+    </div>
+
+    <!-- Grid de 3 Mockups con Capturas Reales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+
+      <!-- ================= TARJETA 1: MÓDULO DE CHAT (IA COACH) ================= -->
+      <div
+        class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+        <!-- MARCO DE TELÉFONO -->
+        <div
+          class="relative w-[260px] h-[530px] bg-[#0c1220] rounded-[44px] p-2.5 shadow-2xl border border-slate-700/80 mb-6 flex flex-col select-none">
+          <!-- Parlante / Dynamic Island -->
+          <div class="w-20 h-3.5 bg-black rounded-full mx-auto mb-2 shrink-0"></div>
+
+          <!-- CONTENEDOR DE LA CAPTURA REAL -->
+          <div
+            class="relative flex-1 w-full bg-[#101626] rounded-[34px] overflow-hidden flex items-center justify-center">
+            <!-- 📸 REEMPLAZA ESTE SRC CON TU IMAGEN: src="img/chat.png" -->
+            <img src="img/chat.png" alt="Captura Módulo IA Coach Focusync" class="w-full h-full object-cover object-top"
+              onerror="this.src='https://placehold.co/1080x2340/101626/6366f1?text=Captura+de+Pantalla%0AChat+IA+Coach'">
+          </div>
+        </div>
+
+        <!-- INFORMACIÓN DEL MÓDULO -->
+        <div class="w-full text-left space-y-2">
+          <div
+            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-brand-600 text-xs font-semibold">
+            <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+            <span>IA Coach</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Módulo IA Coach</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Asistente conversacional inteligente para estructurar planes de estudio a la medida, desglosar temas
+            complejos y guiar las metas del estudiante en tiempo real.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= TARJETA 2: DASHBOARD ================= -->
+      <div
+        class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+        <!-- MARCO DE TELÉFONO -->
+        <div
+          class="relative w-[260px] h-[530px] bg-[#0c1220] rounded-[44px] p-2.5 shadow-2xl border border-slate-700/80 mb-6 flex flex-col select-none">
+          <!-- Parlante / Dynamic Island -->
+          <div class="w-20 h-3.5 bg-black rounded-full mx-auto mb-2 shrink-0"></div>
+
+          <!-- CONTENEDOR DE LA CAPTURA REAL -->
+          <div
+            class="relative flex-1 w-full bg-[#101626] rounded-[34px] overflow-hidden flex items-center justify-center">
+            <!-- 📸 REEMPLAZA ESTE SRC CON TU IMAGEN: src="img/dashboard.png" -->
+            <img src="img/dashboard.png" alt="Captura Dashboard Focusync" class="w-full h-full object-cover object-top"
+              onerror="this.src='https://placehold.co/1080x2340/101626/6366f1?text=Captura+de+Pantalla%0ADashboard+M%C3%A9tricas'">
+          </div>
+        </div>
+
+        <!-- INFORMACIÓN DEL MÓDULO -->
+        <div class="w-full text-left space-y-2">
+          <div
+            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-brand-600 text-xs font-semibold">
+            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i>
+            <span>Dashboard</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Panel Central de Métricas</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Visión global del tiempo efectivo de concentración, balance por materias y estadísticas semanales para
+            evaluar el progreso diario sin tablas complejas.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= TARJETA 3: LOGROS ================= -->
+      <div
+        class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+        <!-- MARCO DE TELÉFONO -->
+        <div
+          class="relative w-[260px] h-[530px] bg-[#0c1220] rounded-[44px] p-2.5 shadow-2xl border border-slate-700/80 mb-6 flex flex-col select-none">
+          <!-- Parlante / Dynamic Island -->
+          <div class="w-20 h-3.5 bg-black rounded-full mx-auto mb-2 shrink-0"></div>
+
+          <!-- CONTENEDOR DE LA CAPTURA REAL -->
+          <div
+            class="relative flex-1 w-full bg-[#101626] rounded-[34px] overflow-hidden flex items-center justify-center">
+            <!-- 📸 REEMPLAZA ESTE SRC CON TU IMAGEN: src="img/logros.png" -->
+            <img src="img/logros.png" alt="Captura Módulo de Logros Focusync"
+              class="w-full h-full object-cover object-top"
+              onerror="this.src='https://placehold.co/1080x2340/101626/6366f1?text=Captura+de+Pantalla%0AM%C3%B3dulo+de+Logros'">
+          </div>
+        </div>
+
+        <!-- INFORMACIÓN DEL MÓDULO -->
+        <div class="w-full text-left space-y-2">
+          <div
+            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-brand-600 text-xs font-semibold">
+            <i data-lucide="trophy" class="w-3.5 h-3.5"></i>
+            <span>Logros & Rachas</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Gamificación y Disciplina</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Recompensas visuales, insignias desbloqueables y contador de rachas continuas que premian la consistencia y
+            reducen el abandono en sesiones de estudio.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="demo" class="py-20 bg-slate-900 text-white px-6">
+    <div class="max-w-5xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest mb-2">
+          Demostración en Vivo
+        </h2>
+        <p class="text-3xl font-black text-white">Evidencia del Proyecto</p>
+        <p class="text-slate-400 text-sm mt-3">
+          Recorrido del prototipo funcional y componentes implementados.
+        </p>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-2xl">
+        <div class="relative w-full aspect-video flex items-center justify-center bg-slate-950">
+          <div class="text-center p-8">
+            <div
+              class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-500">
+              <i data-lucide="video" class="w-8 h-8"></i>
+            </div>
+            <h4 class="text-lg font-semibold text-white">
+              Video Demostrativo del Prototipo
+            </h4>
+            <p class="text-slate-400 text-xs max-w-md mx-auto mt-2">
+              Incrusta aquí el enlace a YouTube o Drive con el video de la app
+              en ejecución, o enlaza directamente a tu APK de prueba.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 max-w-2xl mx-auto">
+        <!-- Repositorio Git -->
+        <a href="https://github.com" target="_blank"
+          class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-3">
+          <i data-lucide="code" class="w-5 h-5 text-brand-500"></i>
+          <div>
+            <div class="text-sm font-semibold text-white">Repositorio Git</div>
+            <div class="text-xs text-slate-400">Ver código fuente</div>
+          </div>
+        </a>
+
+        <!-- Paquete APK / Expo -->
+        <a href="#"
+          class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-3">
+          <i data-lucide="download" class="w-5 h-5 text-emerald-400"></i>
+          <div>
+            <div class="text-sm font-semibold text-white">Paquete APK / Expo</div>
+            <div class="text-xs text-slate-400">Descarga para Android</div>
+          </div>
+        </a>
+      </div>
+  </section>
+
+  <section id="tecnologia" class="py-16 bg-white border-b border-slate-200 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10 text-center">
+        <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">
+          Arquitectura
+        </h2>
+        <p class="text-2xl font-black text-slate-900">
+          Respaldo Técnico de la Solución
+        </p>
+        <p class="text-slate-600 text-xs mt-1">
+          Tecnologías seleccionadas para garantizar escalabilidad y
+          rendimiento nativo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-xs font-mono uppercase text-slate-500 block mb-1">Frontend Móvil</span>
+          <span class="font-bold text-slate-900">React Native / Expo</span>
+        </div>
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-xs font-mono uppercase text-slate-500 block mb-1">Backend</span>
+          <span class="font-bold text-slate-900">Supabase + PostgreSQL</span>
+        </div>
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-xs font-mono uppercase text-slate-500 block mb-1">Gemini API</span>
+          <span class="font-bold text-slate-900">Generación inteligente de planes de estudio.</span>
+        </div>
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+          <span class="text-xs font-mono uppercase text-slate-500 block mb-1">Control de Versiones</span>
+          <span class="font-bold text-slate-900">Git & GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">
+        Equipo de Desarrollo
+      </h2>
+      <p class="text-3xl font-black text-slate-900">
+        Quienes hacen posible Focusync
+      </p>
+    </div>
+
+    <!-- GRID DE 6 COLUMNAS (3 ARRIBA, 2 CENTRADAS ABAJO) -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+
+      <!-- ================= INTEGRANTE 1 ================= -->
+      <div
+        class="md:col-span-2 p-6 bg-white rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="w-20 h-20 bg-indigo-50 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-brand-600 text-xl border-2 border-brand-100">
+          OV
+        </div>
+        <h4 class="font-bold text-slate-900 text-base">Oscar Villalobos</h4>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Líder Técnico & Frontend Mobile</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          Arquitectura de la aplicación móvil, integración de hooks de sincronización y lógica central.
+        </p>
+        <div class="flex justify-center gap-3 text-slate-400">
+          <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
+              data-lucide="github" class="w-4 h-4"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-brand-600 transition-colors"><i
+              data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- ================= INTEGRANTE 2 ================= -->
+      <div
+        class="md:col-span-2 p-6 bg-white rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="w-20 h-20 bg-indigo-50 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-brand-600 text-xl border-2 border-brand-100">
+          WR
+        </div>
+        <h4 class="font-bold text-slate-900 text-base">William Ramos</h4>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+        </p>
+        <div class="flex justify-center gap-3 text-slate-400">
+          <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
+              data-lucide="github" class="w-4 h-4"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-brand-600 transition-colors"><i
+              data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- ================= INTEGRANTE 3 ================= -->
+      <div
+        class="md:col-span-2 p-6 bg-white rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="w-20 h-20 bg-indigo-50 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-brand-600 text-xl border-2 border-brand-100">
+          PO
+        </div>
+        <h4 class="font-bold text-slate-900 text-base">Priscila Osorio</h4>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+        </p>
+        <div class="flex justify-center gap-3 text-slate-400">
+          <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
+              data-lucide="github" class="w-4 h-4"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-brand-600 transition-colors"><i
+              data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- ================= INTEGRANTE 4 (CENTRADOR: md:col-start-2) ================= -->
+      <div
+        class="md:col-span-2 md:col-start-2 p-6 bg-white rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="w-20 h-20 bg-indigo-50 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-brand-600 text-xl border-2 border-brand-100">
+          LP
+        </div>
+        <h4 class="font-bold text-slate-900 text-base">Liliana Portillo</h4>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+        </p>
+        <div class="flex justify-center gap-3 text-slate-400">
+          <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
+              data-lucide="github" class="w-4 h-4"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-brand-600 transition-colors"><i
+              data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <!-- ================= INTEGRANTE 5 ================= -->
+      <div
+        class="md:col-span-2 p-6 bg-white rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div
+          class="w-20 h-20 bg-indigo-50 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-brand-600 text-xl border-2 border-brand-100">
+          DG
+        </div>
+        <h4 class="font-bold text-slate-900 text-base">Daniela Gutiérrez</h4>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Backend & Persistencia</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          Gestión de persistencia local, esquemas de datos y sincronización de sesiones.
+        </p>
+        <div class="flex justify-center gap-3 text-slate-400">
+          <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
+              data-lucide="github" class="w-4 h-4"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="hover:text-brand-600 transition-colors"><i
+              data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  
+<!-- ==================== SECCIÓN DE CONTACTO: CÓDIGOS QR ==================== -->
+  <footer id="contacto" class="bg-[#0b0f1a] text-slate-400 py-20 px-6 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto text-center space-y-6">
+      
+      <!-- Icono y Título -->
+      <div class="inline-flex w-12 h-12 bg-brand-600 rounded-2xl items-center justify-center text-white shadow-lg shadow-brand-500/20">
+        <i data-lucide="qr-code" class="w-6 h-6"></i>
+      </div>
+      
+      <div>
+        <h3 class="text-3xl font-black text-white tracking-tight">Tarjetas Digitales de Contacto</h3>
+        <p class="text-sm max-w-lg mx-auto text-slate-400 mt-2">
+          Escanea el código QR de cualquier integrante para acceder directamente a su tarjeta de presentación.
+        </p>
+      </div>
+
+      <!-- BOTÓN DISPARADOR DEL ACORDEÓN -->
+      <div class="pt-2">
+        <button 
+          type="button" 
+          onclick="toggleQrAccordion()" 
+          id="toggleQrBtn"
+          class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all border border-slate-700 shadow-xl hover:border-brand-500/50 group"
+        >
+          <i data-lucide="scan" class="w-4 h-4 text-brand-400"></i>
+          <span id="toggleQrText">Ver códigos QR del equipo</span>
+          <i data-lucide="chevron-down" id="toggleQrIcon" class="w-4 h-4 text-slate-400 transition-transform duration-300 group-hover:text-white"></i>
+        </button>
+      </div>
+
+      <!-- ================= CONTENEDOR ACORDEÓN (OCULTO INICIALMENTE) ================= -->
+      <div id="qrAccordion" class="hidden pt-8 transition-all duration-300">
+        <!-- Contenedor flexible: 3 arriba y 2 centrados abajo automáticamente -->
+        <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+          
+          <!-- ================= QR 1: OSCAR VILLALOBOS ================= -->
+          <div 
+            onclick="openQrModal(this)"
+            data-name="Oscar Villalobos"
+            data-role="Líder Técnico & Frontend Mobile"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
+          >
+            <!-- Contenedor del QR con fondo blanco para fácil escaneo -->
+            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 1 -->
+              <img src="" alt="QR Oscar Villalobos" class="w-full h-full object-contain">
+              
+              <!-- Hover indicador -->
+              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+                <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
+                <span>Ampliar QR</span>
+              </div>
+            </div>
+            
+            <h4 class="text-white font-bold text-sm tracking-wide">Oscar Villalobos</h4>
+            <p class="text-brand-400 text-xs mt-0.5">Líder Técnico & Mobile</p>
+          </div>
+
+          <!-- ================= QR 2: WILLIAM RAMOS ================= -->
+          <div 
+            onclick="openQrModal(this)"
+            data-name="William Ramos"
+            data-role="Diseño UI/UX & Pruebas"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
+          >
+            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 2 -->
+              <img src="" alt="QR William Ramos" class="w-full h-full object-contain">
+              
+              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+                <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
+                <span>Ampliar QR</span>
+              </div>
+            </div>
+            
+            <h4 class="text-white font-bold text-sm tracking-wide">William Ramos</h4>
+            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+          </div>
+
+          <!-- ================= QR 3: PRISCILA OSORIO ================= -->
+          <div 
+            onclick="openQrModal(this)"
+            data-name="Priscila Osorio"
+            data-role="Diseño UI/UX & Pruebas"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
+          >
+            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 3 -->
+              <img src="" alt="QR Priscila Osorio" class="w-full h-full object-contain">
+              
+              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+                <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
+                <span>Ampliar QR</span>
+              </div>
+            </div>
+            
+            <h4 class="text-white font-bold text-sm tracking-wide">Priscila Osorio</h4>
+            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+          </div>
+
+          <!-- ================= QR 4: LILIANA PORTILLO ================= -->
+          <div 
+            onclick="openQrModal(this)"
+            data-name="Liliana Portillo"
+            data-role="Diseño UI/UX & Pruebas"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
+          >
+            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 4 -->
+              <img src="" alt="QR Liliana Portillo" class="w-full h-full object-contain">
+              
+              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+                <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
+                <span>Ampliar QR</span>
+              </div>
+            </div>
+            
+            <h4 class="text-white font-bold text-sm tracking-wide">Liliana Portillo</h4>
+            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+          </div>
+
+          <!-- ================= QR 5: DANIELA GUTIÉRREZ ================= -->
+          <div 
+            onclick="openQrModal(this)"
+            data-name="Daniela Gutiérrez"
+            data-role="Backend & Persistencia"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
+          >
+            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 5 -->
+              <img src="" alt="QR Daniela Gutiérrez" class="w-full h-full object-contain">
+              
+              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+                <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
+                <span>Ampliar QR</span>
+              </div>
+            </div>
+            
+            <h4 class="text-white font-bold text-sm tracking-wide">Daniela Gutiérrez</h4>
+            <p class="text-brand-400 text-xs mt-0.5">Backend & Persistencia</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pie de página -->
+      <div class="pt-12 border-t border-slate-800/80 text-xs text-slate-500">
+        Focusync &copy; 2026. Proyecto desarrollado con fines académicos y de exposición.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE QR AMPLIADO ==================== -->
+  <div 
+    id="qrModal" 
+    onclick="closeQrModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none"
+  >
+    <div 
+      id="qrModalBox"
+      onclick="event.stopPropagation()"
+      class="relative max-w-sm w-full bg-slate-900 rounded-3xl p-6 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out text-center flex flex-col items-center"
+    >
+      <!-- Botón de cerrar (X) -->
+      <button 
+        type="button"
+        onclick="closeQrModal()" 
+        class="absolute -top-3 -right-3 w-9 h-9 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95"
+      >
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <!-- QR Grande sobre fondo blanco nítido -->
+      <div class="w-64 h-64 bg-white rounded-2xl p-4 shadow-xl flex items-center justify-center mb-4">
+        <img id="qrModalImg" src="" alt="QR Ampliado" class="w-full h-full object-contain">
+      </div>
+
+      <!-- Nombre y Rol en el modal -->
+      <h3 id="qrModalName" class="text-white font-extrabold text-lg"></h3>
+      <p id="qrModalRole" class="text-brand-400 text-xs font-medium mt-0.5"></p>
+      <span class="text-[11px] text-slate-400 mt-3 inline-flex items-center gap-1">
+        <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+        Apunta con tu cámara para abrir la tarjeta
+      </span>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL DE LA TARJETA (RESPONSIVE) ==================== -->
+  <div 
+    id="cardModal" 
+    onclick="closeCardModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none select-none"
+  >
+    <div 
+      id="modalCardBox"
+      onclick="event.stopPropagation()"
+      class="relative max-w-2xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out"
+    >
+      <!-- Botón de Cerrar (X) -->
+      <button 
+        type="button" 
+        onclick="closeCardModal()"
+        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-20"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- 📸 IMAGEN DE LA TARJETA DE PRESENTACIÓN DENTRO DEL MODAL -->
+      <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+        <!-- PEGA AQUÍ LA RUTA O URL DE LA TARJETA COMPLETA -->
+        <img 
+          id="targetCardImg"
+          src="" 
+          alt="Tarjeta de presentación Focusync" 
+          class="w-full h-full object-contain"
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL DE AMPLIACIÓN (CON ANIMACIÓN POP-UP) ==================== -->
+  <div 
+    id="cardModal" 
+    onclick="closeCardModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none"
+  >
+    <!-- Contenedor con animación de escala (zoom) -->
+    <div 
+      id="modalCardBox"
+      onclick="event.stopPropagation()"
+      class="relative max-w-4xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out"
+    >
+      <!-- Botón de cerrar (X) -->
+      <button 
+        type="button"
+        onclick="closeCardModal()"
+        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-10"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Imagen ampliada con aspect 16/9 -->
+      <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+        <img id="modalCardImg" src="" alt="Tarjeta ampliada" class="w-full h-full object-contain">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MENÚ LATERAL MÓVIL (SIDE DRAWER) ==================== -->
+  <div 
+    id="mobileMenuBackdrop" 
+    onclick="closeMobileMenu()" 
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"
+  >
+    <!-- Panel lateral deslizable -->
+    <div 
+      id="mobileMenuDrawer" 
+      onclick="event.stopPropagation()"
+      class="fixed top-0 right-0 bottom-0 w-[280px] bg-[#0c1220] text-white p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out border-l border-slate-800"
+    >
+      <div>
+        <!-- Cabecera del menú: Logo + Botón Cerrar -->
+        <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+            </div>
+            <span class="font-extrabold text-lg text-white">Focusync</span>
+          </div>
+          <button 
+            type="button" 
+            onclick="closeMobileMenu()" 
+            class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            aria-label="Cerrar menú"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Enlaces de Navegación -->
+        <nav class="flex flex-col gap-2 mt-6">
+          <a 
+            href="#problema" 
+            onclick="closeMobileMenu()" 
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
+          >
+            <i data-lucide="target" class="w-4 h-4 text-brand-400"></i>
+            <span>Propósito</span>
+          </a>
+          <a 
+            href="#solucion" 
+            onclick="closeMobileMenu()" 
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
+          >
+            <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
+            <span>Funcionalidades</span>
+          </a>
+          <a 
+            href="#demo" 
+            onclick="closeMobileMenu()" 
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
+          >
+            <i data-lucide="play-circle" class="w-4 h-4 text-brand-400"></i>
+            <span>Evidencias</span>
+          </a>
+          <a 
+            href="#tecnologia" 
+            onclick="closeMobileMenu()" 
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
+          >
+            <i data-lucide="cpu" class="w-4 h-4 text-brand-400"></i>
+            <span>Tecnología</span>
+          </a>
+          <a 
+            href="#equipo" 
+            onclick="closeMobileMenu()" 
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
+          >
+            <i data-lucide="users" class="w-4 h-4 text-brand-400"></i>
+            <span>Equipo</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Botón inferior para contacto -->
+      <div class="pt-6 border-t border-slate-800">
+        <a 
+          href="#contacto" 
+          onclick="closeMobileMenu()" 
+          class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-colors shadow-lg shadow-brand-600/30"
+        >
+          <i data-lucide="id-card" class="w-4 h-4"></i>
+          <span>Ver Códigos QR / Contacto</span>
+        </a>
+        <p class="text-[10px] text-center text-slate-500 mt-4">Focusync App &copy; 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inicializar todos los iconos de Lucide
+    lucide.createIcons();
+
+    // Variables de control del temporizador (45 minutos)
+    let timerInterval = null;
+    const initialSeconds = 45 * 60;
+    let seconds = initialSeconds;
+    let isRunning = false;
+
+    const timerDisplay = document.getElementById("timerDisplay");
+    const timerBtn = document.getElementById("timerBtn");
+    const btnText = document.getElementById("btnText");
+    const sensorPill = document.getElementById("sensorPill");
+    const sensorDot = document.getElementById("sensorDot");
+    const sensorText = document.getElementById("sensorText");
+
+    function updateDisplay() {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      // Formato con espacio idéntico a la app "45 : 00"
+      timerDisplay.textContent = `${String(mins).padStart(2, "0")} : ${String(secs).padStart(2, "0")}`;
+    }
+
+    function toggleTimer() {
+      if (isRunning) {
+        // ESTADO: PAUSADO
+        clearInterval(timerInterval);
+        isRunning = false;
+
+        btnText.textContent = "Reanudar bloque";
+        timerBtn.classList.remove("bg-rose-600", "hover:bg-rose-700");
+        timerBtn.classList.add("bg-[#5256e8]", "hover:bg-[#4347d9]");
+
+        // Cambiar sensor a pausa
+        sensorText.textContent = "Sesión en pausa";
+        sensorDot.className = "w-2 h-2 rounded-full bg-amber-400";
+        sensorPill.className =
+          "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2b2516] border border-[#42391e] text-amber-300 text-xs font-medium transition-all shadow-sm";
+      } else {
+        // ESTADO: CORRIENDO (ENFOQUE ACTIVO)
+        isRunning = true;
+
+        btnText.textContent = "Pausar bloque";
+        timerBtn.classList.remove("bg-[#5256e8]", "hover:bg-[#4347d9]");
+        timerBtn.classList.add("bg-rose-600", "hover:bg-rose-700");
+
+        // Sensor activo con pulso
+        sensorText.textContent = "Monitoreando enfoque";
+        sensorDot.className =
+          "w-2 h-2 rounded-full bg-emerald-400 animate-ping";
+        sensorPill.className =
+          "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#122822] border border-[#1b4337] text-emerald-300 text-xs font-medium transition-all shadow-sm";
+
+        timerInterval = setInterval(() => {
+          if (seconds > 0) {
+            seconds--;
+            updateDisplay();
+          } else {
+            // TERMINADO
+            clearInterval(timerInterval);
+            isRunning = false;
+            seconds = initialSeconds;
+            updateDisplay();
+            btnText.textContent = "Iniciar bloque";
+            sensorText.textContent = "¡Bloque completado!";
+            sensorDot.className = "w-2 h-2 rounded-full bg-blue-400";
+            timerBtn.classList.remove("bg-rose-600", "hover:bg-rose-700");
+            timerBtn.classList.add("bg-[#5256e8]", "hover:bg-[#4347d9]");
+          }
+        }, 1000);
+      }
+      // Recrear iconos para asegurar consistencia
+      lucide.createIcons();
+    }
+    // 1. Control del acordeón
+  function toggleCardsAccordion() {
+    const accordion = document.getElementById('cardsAccordion');
+    const text = document.getElementById('toggleCardsText');
+    const icon = document.getElementById('toggleCardsIcon');
+
+    const isHidden = accordion.classList.contains('hidden');
+
+    if (isHidden) {
+      accordion.classList.remove('hidden');
+      text.textContent = 'Ocultar tarjetas del equipo';
+      icon.classList.add('rotate-180');
+    } else {
+      accordion.classList.add('hidden');
+      text.textContent = 'Ver tarjetas del equipo';
+      icon.classList.remove('rotate-180');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 1. Control del acordeón de códigos QR
+  function toggleQrAccordion() {
+    const accordion = document.getElementById('qrAccordion');
+    const text = document.getElementById('toggleQrText');
+    const icon = document.getElementById('toggleQrIcon');
+
+    const isHidden = accordion.classList.contains('hidden');
+
+    if (isHidden) {
+      accordion.classList.remove('hidden');
+      text.textContent = 'Ocultar códigos QR';
+      icon.classList.add('rotate-180');
+    } else {
+      accordion.classList.add('hidden');
+      text.textContent = 'Ver códigos QR del equipo';
+      icon.classList.remove('rotate-180');
+    }
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 2. Abrir el modal con animación fluida de Zoom
+  function openQrModal(cardElement) {
+    const img = cardElement.querySelector('img');
+    const name = cardElement.getAttribute('data-name');
+    const role = cardElement.getAttribute('data-role');
+
+    const modal = document.getElementById('qrModal');
+    const modalBox = document.getElementById('qrModalBox');
+    const modalImg = document.getElementById('qrModalImg');
+    const modalName = document.getElementById('qrModalName');
+    const modalRole = document.getElementById('qrModalRole');
+
+    // Asignar datos al modal
+    modalImg.src = img.src;
+    modalName.textContent = name;
+    modalRole.textContent = role;
+
+    // Activar backdrop
+    modal.classList.remove('pointer-events-none', 'opacity-0');
+    modal.classList.add('pointer-events-auto', 'opacity-100');
+
+    // Animación de pop-up
+    setTimeout(() => {
+      modalBox.classList.remove('scale-90', 'opacity-0');
+      modalBox.classList.add('scale-100', 'opacity-100');
+    }, 10);
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 3. Cerrar el modal con animación de salida
+  function closeQrModal() {
+    const modal = document.getElementById('qrModal');
+    const modalBox = document.getElementById('qrModalBox');
+
+    modalBox.classList.remove('scale-100', 'opacity-100');
+    modalBox.classList.add('scale-90', 'opacity-0');
+
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+
+    setTimeout(() => {
+      modal.classList.remove('pointer-events-auto');
+      modal.classList.add('pointer-events-none');
+    }, 300);
+  }
+
+  // Cerrar al pulsar la tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeQrModal();
+  });
+
+  // Control del Menú Lateral Móvil
+  function openMobileMenu() {
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    const drawer = document.getElementById('mobileMenuDrawer');
+
+    // 1. Mostrar el fondo oscuro
+    backdrop.classList.remove('pointer-events-none', 'opacity-0');
+    backdrop.classList.add('pointer-events-auto', 'opacity-100');
+
+    // 2. Deslizar el menú desde la derecha
+    setTimeout(() => {
+      drawer.classList.remove('translate-x-full');
+      drawer.classList.add('translate-x-0');
+    }, 10);
+
+    // Evitar que el fondo haga scroll mientras el menú está abierto
+    document.body.style.overflow = 'hidden';
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function closeMobileMenu() {
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    const drawer = document.getElementById('mobileMenuDrawer');
+
+    // Deslizar de vuelta hacia la derecha
+    drawer.classList.remove('translate-x-0');
+    drawer.classList.add('translate-x-full');
+
+    backdrop.classList.remove('opacity-100');
+    backdrop.classList.add('opacity-0');
+
+    setTimeout(() => {
+      backdrop.classList.remove('pointer-events-auto');
+      backdrop.classList.add('pointer-events-none');
+      // Restaurar el scroll del cuerpo
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  // Actualizar el listener de Escape para cerrar el menú si está abierto
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+      if (typeof closeQrModal === 'function') closeQrModal();
+    }
+  });
+  </script>
+</body>
+
+</html>
