@@ -2,6 +2,9 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+  <!-- Favicon: Icono Brain oficial integrado en SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%234f46e5%22/%3E%3Cg%20transform%3D%22translate%284%2C%204%29%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%205a3%203%200%201%200-5.997.125%204%204%200%200%200-2.526%205.77%204%204%200%200%200%20.556%206.588A4%204%200%201%200%2012%2018Z%22/%3E%3Cpath%20d%3D%22M12%205a3%203%200%201%201%205.997.125%204%204%200%200%201%202.526%205.77%204%204%200%200%201-.556%206.588A4%204%200%201%201%2012%2018Z%22/%3E%3Cpath%20d%3D%22M15%2013a4.5%204.5%200%200%201-3-4%204.5%204.5%200%200%201-3%204%22/%3E%3Cpath%20d%3D%22M12%2018v4%22/%3E%3Cpath%20d%3D%22M12%205V2%22/%3E%3C/g%3E%3C/svg%3E">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Focusync | Sincronización y Enfoque Productivo</title>
@@ -38,26 +41,30 @@
         0 0 0 12px #1e293b,
         0 0 0 14px #475569;
     }
-    @keyframes laserScan {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    top: 96%;
-    opacity: 0;
-  }
-}
 
-.animate-laser {
-  animation: laserScan 2.4s ease-in-out infinite alternate;
-}
+    @keyframes laserScan {
+      0% {
+        top: 0%;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        top: 96%;
+        opacity: 0;
+      }
+    }
+
+    .animate-laser {
+      animation: laserScan 2.4s ease-in-out infinite alternate;
+    }
   </style>
 </head>
 
@@ -66,9 +73,12 @@
   <header class="fixed top-0 left-0 right-0 z-40 glassmorphism border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logotipo -->
+      <!-- LOGO CON ICONO BRAIN (CEREBRO) -->
       <div class="flex items-center gap-2">
-        <div class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold shadow-md shadow-brand-500/30">
-          <i data-lucide="zap" class="w-5 h-5"></i>
+        <div
+          class="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-brand-500/30">
+          <!-- Icono Brain de Lucide / Expo -->
+          <i data-lucide="brain" class="w-5 h-5"></i>
         </div>
         <span class="font-extrabold text-xl tracking-tight text-slate-900">Focusync</span>
       </div>
@@ -84,18 +94,16 @@
 
       <!-- Botón Contacto Escritorio -->
       <div class="hidden md:flex items-center">
-        <a href="#contacto" class="bg-slate-900 hover:bg-slate-800 text-white text-xs md:text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition-all">
+        <a href="#contacto"
+          class="bg-slate-900 hover:bg-slate-800 text-white text-xs md:text-sm font-medium px-4 py-2 rounded-lg shadow-sm transition-all">
           Contacto
         </a>
       </div>
 
       <!-- Botón Hamburguesa Móvil (visible solo en móvil) -->
-      <button 
-        type="button" 
-        onclick="openMobileMenu()" 
+      <button type="button" onclick="openMobileMenu()"
         class="md:hidden p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-        aria-label="Abrir menú de navegación"
-      >
+        aria-label="Abrir menú de navegación">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
@@ -125,10 +133,14 @@
             <i data-lucide="play-circle" class="w-5 h-5"></i>
             Ver Demostración
           </a>
-          <a href="https://github.com" target="_blank"
-            class="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-medium px-6 py-3 rounded-xl shadow-sm transition-all">
-            <i data-lucide="github" class="w-5 h-5"></i>
-            Código en GitHub
+          <a href="https://github.com/Willrdgz/FocusSync" target="_blank"
+            class="inline-flex items-center gap-2.5 bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-medium px-6 py-3 rounded-xl shadow-sm transition-all hover:border-slate-400">
+            <!-- Logo SVG original de GitHub -->
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>Código en GitHub</span>
           </a>
         </div>
       </div>
@@ -421,27 +433,24 @@
         </p>
       </div>
 
+      <!-- Contenedor de Video Demostrativo Actualizado -->
       <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-2xl">
-        <div class="relative w-full aspect-video flex items-center justify-center bg-slate-950">
-          <div class="text-center p-8">
-            <div
-              class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-500">
-              <i data-lucide="video" class="w-8 h-8"></i>
-            </div>
-            <h4 class="text-lg font-semibold text-white">
-              Video Demostrativo del Prototipo
-            </h4>
-            <p class="text-slate-400 text-xs max-w-md mx-auto mt-2">
-              Incrusta aquí el enlace a YouTube o Drive con el video de la app
-              en ejecución, o enlaza directamente a tu APK de prueba.
-            </p>
-          </div>
+        <div class="relative w-full aspect-video">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/Dtx-lhYaP-o" 
+            title="Focusync - Demostración de la Aplicación" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 max-w-2xl mx-auto">
         <!-- Repositorio Git -->
-        <a href="https://github.com" target="_blank"
+        <a href="https://github.com/Willrdgz/FocusSync" target="_blank"
           class="p-4 rounded-xl bg-slate-800/60 border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-3">
           <i data-lucide="code" class="w-5 h-5 text-brand-500"></i>
           <div>
@@ -519,9 +528,9 @@
           OV
         </div>
         <h4 class="font-bold text-slate-900 text-base">Oscar Villalobos</h4>
-        <p class="text-xs text-brand-600 font-semibold mb-3">Líder Técnico & Frontend Mobile</p>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Diseñador UI/UX & Frontend Mobile</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">
-          Arquitectura de la aplicación móvil, integración de hooks de sincronización y lógica central.
+          Diseño del sistema visual, maquetación de interfaces móviles y optimización del flujo de usuario
         </p>
         <div class="flex justify-center gap-3 text-slate-400">
           <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
@@ -539,9 +548,9 @@
           WR
         </div>
         <h4 class="font-bold text-slate-900 text-base">William Ramos</h4>
-        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Líder Técnico & Frontend Mobile</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">
-          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+          Arquitectura de la aplicación móvil, integración de hooks de sincronización y lógica central.
         </p>
         <div class="flex justify-center gap-3 text-slate-400">
           <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
@@ -559,9 +568,9 @@
           PO
         </div>
         <h4 class="font-bold text-slate-900 text-base">Priscila Osorio</h4>
-        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Backend + Prompting</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">
-          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+          Desarrollo de servicios backend, ingeniería de prompts e integración con modelos de lenguaje.
         </p>
         <div class="flex justify-center gap-3 text-slate-400">
           <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
@@ -579,9 +588,9 @@
           LP
         </div>
         <h4 class="font-bold text-slate-900 text-base">Liliana Portillo</h4>
-        <p class="text-xs text-brand-600 font-semibold mb-3">Diseño UI/UX & Pruebas</p>
+        <p class="text-xs text-brand-600 font-semibold mb-3">Backend & Pruebas</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">
-          Diseño de experiencia de usuario en Figma, prototipado interactivo y validación funcional.
+          Lógica de servidor, suites de pruebas unitarias y de integración, y validación de endpoints.
         </p>
         <div class="flex justify-center gap-3 text-slate-400">
           <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
@@ -601,7 +610,7 @@
         <h4 class="font-bold text-slate-900 text-base">Daniela Gutiérrez</h4>
         <p class="text-xs text-brand-600 font-semibold mb-3">Backend & Persistencia</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">
-          Gestión de persistencia local, esquemas de datos y sincronización de sesiones.
+          Modelado de base de datos, gestión de transacciones y optimización del almacenamiento persistente.
         </p>
         <div class="flex justify-center gap-3 text-slate-400">
           <a href="https://github.com" target="_blank" class="hover:text-slate-900 transition-colors"><i
@@ -615,16 +624,17 @@
   </section>
 
 
-  
-<!-- ==================== SECCIÓN DE CONTACTO: CÓDIGOS QR ==================== -->
+
+  <!-- ==================== SECCIÓN DE CONTACTO: CÓDIGOS QR ==================== -->
   <footer id="contacto" class="bg-[#0b0f1a] text-slate-400 py-20 px-6 border-t border-slate-800">
     <div class="max-w-6xl mx-auto text-center space-y-6">
-      
+
       <!-- Icono y Título -->
-      <div class="inline-flex w-12 h-12 bg-brand-600 rounded-2xl items-center justify-center text-white shadow-lg shadow-brand-500/20">
+      <div
+        class="inline-flex w-12 h-12 bg-brand-600 rounded-2xl items-center justify-center text-white shadow-lg shadow-brand-500/20">
         <i data-lucide="qr-code" class="w-6 h-6"></i>
       </div>
-      
+
       <div>
         <h3 class="text-3xl font-black text-white tracking-tight">Tarjetas Digitales de Contacto</h3>
         <p class="text-sm max-w-lg mx-auto text-slate-400 mt-2">
@@ -634,15 +644,12 @@
 
       <!-- BOTÓN DISPARADOR DEL ACORDEÓN -->
       <div class="pt-2">
-        <button 
-          type="button" 
-          onclick="toggleQrAccordion()" 
-          id="toggleQrBtn"
-          class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all border border-slate-700 shadow-xl hover:border-brand-500/50 group"
-        >
+        <button type="button" onclick="toggleQrAccordion()" id="toggleQrBtn"
+          class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all border border-slate-700 shadow-xl hover:border-brand-500/50 group">
           <i data-lucide="scan" class="w-4 h-4 text-brand-400"></i>
           <span id="toggleQrText">Ver códigos QR del equipo</span>
-          <i data-lucide="chevron-down" id="toggleQrIcon" class="w-4 h-4 text-slate-400 transition-transform duration-300 group-hover:text-white"></i>
+          <i data-lucide="chevron-down" id="toggleQrIcon"
+            class="w-4 h-4 text-slate-400 transition-transform duration-300 group-hover:text-white"></i>
         </button>
       </div>
 
@@ -650,110 +657,100 @@
       <div id="qrAccordion" class="hidden pt-8 transition-all duration-300">
         <!-- Contenedor flexible: 3 arriba y 2 centrados abajo automáticamente -->
         <div class="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-          
+
           <!-- ================= QR 1: OSCAR VILLALOBOS ================= -->
-          <div 
-            onclick="openQrModal(this)"
-            data-name="Oscar Villalobos"
-            data-role="Líder Técnico & Frontend Mobile"
-            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
-          >
+          <div onclick="openQrModal(this)" data-name="Oscar Villalobos"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center">
             <!-- Contenedor del QR con fondo blanco para fácil escaneo -->
-            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-              <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 1 -->
-              <img src="" alt="QR Oscar Villalobos" class="w-full h-full object-contain">
-              
+            <div
+              class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+              <img src="https://i.postimg.cc/vZHJ6hcD/tarjetadepresentacionve220589.png" alt="QR Oscar Villalobos"
+                class="w-full h-full object-contain">
+
               <!-- Hover indicador -->
-              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+              <div
+                class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
                 <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
                 <span>Ampliar QR</span>
               </div>
             </div>
-            
+
             <h4 class="text-white font-bold text-sm tracking-wide">Oscar Villalobos</h4>
-            <p class="text-brand-400 text-xs mt-0.5">Líder Técnico & Mobile</p>
+            <p class="text-brand-400 text-xs mt-0.5">Diseñador UI/UX & Frontend Mobile</p>
           </div>
 
           <!-- ================= QR 2: WILLIAM RAMOS ================= -->
-          <div 
-            onclick="openQrModal(this)"
-            data-name="William Ramos"
-            data-role="Diseño UI/UX & Pruebas"
-            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
-          >
-            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+          <div onclick="openQrModal(this)" data-name="William Ramos"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center">
+            <div
+              class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
               <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 2 -->
               <img src="" alt="QR William Ramos" class="w-full h-full object-contain">
-              
-              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+
+              <div
+                class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
                 <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
                 <span>Ampliar QR</span>
               </div>
             </div>
-            
+
             <h4 class="text-white font-bold text-sm tracking-wide">William Ramos</h4>
-            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+            <p class="text-brand-400 text-xs mt-0.5">Líder Técnico & Frontend Mobile</p>
           </div>
 
           <!-- ================= QR 3: PRISCILA OSORIO ================= -->
-          <div 
-            onclick="openQrModal(this)"
-            data-name="Priscila Osorio"
-            data-role="Diseño UI/UX & Pruebas"
-            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
-          >
-            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+          <div onclick="openQrModal(this)" data-name="Priscila Osorio"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center">
+            <div
+              class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
               <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 3 -->
               <img src="" alt="QR Priscila Osorio" class="w-full h-full object-contain">
-              
-              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+
+              <div
+                class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
                 <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
                 <span>Ampliar QR</span>
               </div>
             </div>
-            
+
             <h4 class="text-white font-bold text-sm tracking-wide">Priscila Osorio</h4>
-            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+            <p class="text-brand-400 text-xs mt-0.5">Backend + Prompting</p>
           </div>
 
           <!-- ================= QR 4: LILIANA PORTILLO ================= -->
-          <div 
-            onclick="openQrModal(this)"
-            data-name="Liliana Portillo"
-            data-role="Diseño UI/UX & Pruebas"
-            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
-          >
-            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+          <div onclick="openQrModal(this)" data-name="Liliana Portillo"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center">
+            <div
+              class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
               <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 4 -->
               <img src="" alt="QR Liliana Portillo" class="w-full h-full object-contain">
-              
-              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+
+              <div
+                class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
                 <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
                 <span>Ampliar QR</span>
               </div>
             </div>
-            
+
             <h4 class="text-white font-bold text-sm tracking-wide">Liliana Portillo</h4>
-            <p class="text-brand-400 text-xs mt-0.5">Diseño UI/UX & Pruebas</p>
+            <p class="text-brand-400 text-xs mt-0.5">Backend & Pruebas</p>
           </div>
 
           <!-- ================= QR 5: DANIELA GUTIÉRREZ ================= -->
-          <div 
-            onclick="openQrModal(this)"
-            data-name="Daniela Gutiérrez"
-            data-role="Backend & Persistencia"
-            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center"
-          >
-            <div class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+          <div onclick="openQrModal(this)" data-name="Daniela Gutiérrez"
+            class="group w-full sm:w-[270px] bg-slate-900/90 rounded-2xl border border-slate-800 p-5 shadow-xl hover:border-brand-500/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col items-center">
+            <div
+              class="relative w-44 h-44 bg-white rounded-xl p-3 shadow-inner flex items-center justify-center overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
               <!-- 📸 PEGA AQUÍ LA RUTA DE LA IMAGEN QR 5 -->
               <img src="" alt="QR Daniela Gutiérrez" class="w-full h-full object-contain">
-              
-              <div class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
+
+              <div
+                class="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-semibold gap-1 backdrop-blur-[1px]">
                 <i data-lucide="maximize-2" class="w-5 h-5 text-brand-400"></i>
                 <span>Ampliar QR</span>
               </div>
             </div>
-            
+
             <h4 class="text-white font-bold text-sm tracking-wide">Daniela Gutiérrez</h4>
             <p class="text-brand-400 text-xs mt-0.5">Backend & Persistencia</p>
           </div>
@@ -769,22 +766,13 @@
   </footer>
 
   <!-- ==================== MODAL DE QR AMPLIADO ==================== -->
-  <div 
-    id="qrModal" 
-    onclick="closeQrModal()"
-    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none"
-  >
-    <div 
-      id="qrModalBox"
-      onclick="event.stopPropagation()"
-      class="relative max-w-sm w-full bg-slate-900 rounded-3xl p-6 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out text-center flex flex-col items-center"
-    >
+  <div id="qrModal" onclick="closeQrModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div id="qrModalBox" onclick="event.stopPropagation()"
+      class="relative max-w-sm w-full bg-slate-900 rounded-3xl p-6 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out text-center flex flex-col items-center">
       <!-- Botón de cerrar (X) -->
-      <button 
-        type="button"
-        onclick="closeQrModal()" 
-        class="absolute -top-3 -right-3 w-9 h-9 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95"
-      >
+      <button type="button" onclick="closeQrModal()"
+        class="absolute -top-3 -right-3 w-9 h-9 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
 
@@ -804,78 +792,51 @@
   </div>
 
   <!-- ==================== MODAL DE LA TARJETA (RESPONSIVE) ==================== -->
-  <div 
-    id="cardModal" 
-    onclick="closeCardModal()"
-    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none select-none"
-  >
-    <div 
-      id="modalCardBox"
-      onclick="event.stopPropagation()"
-      class="relative max-w-2xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out"
-    >
+  <div id="cardModal" onclick="closeCardModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none select-none">
+    <div id="modalCardBox" onclick="event.stopPropagation()"
+      class="relative max-w-2xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out">
       <!-- Botón de Cerrar (X) -->
-      <button 
-        type="button" 
-        onclick="closeCardModal()"
-        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-20"
-      >
+      <button type="button" onclick="closeCardModal()"
+        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-20">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <!-- 📸 IMAGEN DE LA TARJETA DE PRESENTACIÓN DENTRO DEL MODAL -->
-      <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+      <div
+        class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
         <!-- PEGA AQUÍ LA RUTA O URL DE LA TARJETA COMPLETA -->
-        <img 
-          id="targetCardImg"
-          src="" 
-          alt="Tarjeta de presentación Focusync" 
-          class="w-full h-full object-contain"
-        >
+        <img id="targetCardImg" src="" alt="Tarjeta de presentación Focusync" class="w-full h-full object-contain">
       </div>
     </div>
   </div>
 
   <!-- ==================== MODAL DE AMPLIACIÓN (CON ANIMACIÓN POP-UP) ==================== -->
-  <div 
-    id="cardModal" 
-    onclick="closeCardModal()"
-    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none"
-  >
+  <div id="cardModal" onclick="closeCardModal()"
+    class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
     <!-- Contenedor con animación de escala (zoom) -->
-    <div 
-      id="modalCardBox"
-      onclick="event.stopPropagation()"
-      class="relative max-w-4xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out"
-    >
+    <div id="modalCardBox" onclick="event.stopPropagation()"
+      class="relative max-w-4xl w-full bg-slate-900 rounded-3xl p-3 border border-slate-700/80 shadow-2xl transform scale-90 opacity-0 transition-all duration-300 ease-out">
       <!-- Botón de cerrar (X) -->
-      <button 
-        type="button"
-        onclick="closeCardModal()"
-        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-10"
-      >
+      <button type="button" onclick="closeCardModal()"
+        class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-10 h-10 bg-slate-800 hover:bg-slate-700 text-white rounded-full flex items-center justify-center border border-slate-600 shadow-xl transition-transform hover:scale-110 active:scale-95 z-10">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <!-- Imagen ampliada con aspect 16/9 -->
-      <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+      <div
+        class="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
         <img id="modalCardImg" src="" alt="Tarjeta ampliada" class="w-full h-full object-contain">
       </div>
     </div>
   </div>
 
   <!-- ==================== MENÚ LATERAL MÓVIL (SIDE DRAWER) ==================== -->
-  <div 
-    id="mobileMenuBackdrop" 
-    onclick="closeMobileMenu()" 
-    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"
-  >
+  <div id="mobileMenuBackdrop" onclick="closeMobileMenu()"
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden">
     <!-- Panel lateral deslizable -->
-    <div 
-      id="mobileMenuDrawer" 
-      onclick="event.stopPropagation()"
-      class="fixed top-0 right-0 bottom-0 w-[280px] bg-[#0c1220] text-white p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out border-l border-slate-800"
-    >
+    <div id="mobileMenuDrawer" onclick="event.stopPropagation()"
+      class="fixed top-0 right-0 bottom-0 w-[280px] bg-[#0c1220] text-white p-6 shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out border-l border-slate-800">
       <div>
         <!-- Cabecera del menú: Logo + Botón Cerrar -->
         <div class="flex items-center justify-between pb-6 border-b border-slate-800">
@@ -885,55 +846,37 @@
             </div>
             <span class="font-extrabold text-lg text-white">Focusync</span>
           </div>
-          <button 
-            type="button" 
-            onclick="closeMobileMenu()" 
+          <button type="button" onclick="closeMobileMenu()"
             class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-            aria-label="Cerrar menú"
-          >
+            aria-label="Cerrar menú">
             <i data-lucide="x" class="w-5 h-5"></i>
           </button>
         </div>
 
         <!-- Enlaces de Navegación -->
         <nav class="flex flex-col gap-2 mt-6">
-          <a 
-            href="#problema" 
-            onclick="closeMobileMenu()" 
-            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
-          >
+          <a href="#problema" onclick="closeMobileMenu()"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium">
             <i data-lucide="target" class="w-4 h-4 text-brand-400"></i>
             <span>Propósito</span>
           </a>
-          <a 
-            href="#solucion" 
-            onclick="closeMobileMenu()" 
-            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
-          >
+          <a href="#solucion" onclick="closeMobileMenu()"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium">
             <i data-lucide="layout-grid" class="w-4 h-4 text-brand-400"></i>
             <span>Funcionalidades</span>
           </a>
-          <a 
-            href="#demo" 
-            onclick="closeMobileMenu()" 
-            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
-          >
+          <a href="#demo" onclick="closeMobileMenu()"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium">
             <i data-lucide="play-circle" class="w-4 h-4 text-brand-400"></i>
             <span>Evidencias</span>
           </a>
-          <a 
-            href="#tecnologia" 
-            onclick="closeMobileMenu()" 
-            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
-          >
+          <a href="#tecnologia" onclick="closeMobileMenu()"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium">
             <i data-lucide="cpu" class="w-4 h-4 text-brand-400"></i>
             <span>Tecnología</span>
           </a>
-          <a 
-            href="#equipo" 
-            onclick="closeMobileMenu()" 
-            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium"
-          >
+          <a href="#equipo" onclick="closeMobileMenu()"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors text-sm font-medium">
             <i data-lucide="users" class="w-4 h-4 text-brand-400"></i>
             <span>Equipo</span>
           </a>
@@ -942,11 +885,8 @@
 
       <!-- Botón inferior para contacto -->
       <div class="pt-6 border-t border-slate-800">
-        <a 
-          href="#contacto" 
-          onclick="closeMobileMenu()" 
-          class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-colors shadow-lg shadow-brand-600/30"
-        >
+        <a href="#contacto" onclick="closeMobileMenu()"
+          class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-colors shadow-lg shadow-brand-600/30">
           <i data-lucide="id-card" class="w-4 h-4"></i>
           <span>Ver Códigos QR / Contacto</span>
         </a>
@@ -1031,146 +971,146 @@
       lucide.createIcons();
     }
     // 1. Control del acordeón
-  function toggleCardsAccordion() {
-    const accordion = document.getElementById('cardsAccordion');
-    const text = document.getElementById('toggleCardsText');
-    const icon = document.getElementById('toggleCardsIcon');
+    function toggleCardsAccordion() {
+      const accordion = document.getElementById('cardsAccordion');
+      const text = document.getElementById('toggleCardsText');
+      const icon = document.getElementById('toggleCardsIcon');
 
-    const isHidden = accordion.classList.contains('hidden');
+      const isHidden = accordion.classList.contains('hidden');
 
-    if (isHidden) {
-      accordion.classList.remove('hidden');
-      text.textContent = 'Ocultar tarjetas del equipo';
-      icon.classList.add('rotate-180');
-    } else {
-      accordion.classList.add('hidden');
-      text.textContent = 'Ver tarjetas del equipo';
-      icon.classList.remove('rotate-180');
+      if (isHidden) {
+        accordion.classList.remove('hidden');
+        text.textContent = 'Ocultar tarjetas del equipo';
+        icon.classList.add('rotate-180');
+      } else {
+        accordion.classList.add('hidden');
+        text.textContent = 'Ver tarjetas del equipo';
+        icon.classList.remove('rotate-180');
+      }
+
+      if (window.lucide) lucide.createIcons();
     }
 
-    if (window.lucide) lucide.createIcons();
-  }
+    // 1. Control del acordeón de códigos QR
+    function toggleQrAccordion() {
+      const accordion = document.getElementById('qrAccordion');
+      const text = document.getElementById('toggleQrText');
+      const icon = document.getElementById('toggleQrIcon');
 
-  // 1. Control del acordeón de códigos QR
-  function toggleQrAccordion() {
-    const accordion = document.getElementById('qrAccordion');
-    const text = document.getElementById('toggleQrText');
-    const icon = document.getElementById('toggleQrIcon');
+      const isHidden = accordion.classList.contains('hidden');
 
-    const isHidden = accordion.classList.contains('hidden');
+      if (isHidden) {
+        accordion.classList.remove('hidden');
+        text.textContent = 'Ocultar códigos QR';
+        icon.classList.add('rotate-180');
+      } else {
+        accordion.classList.add('hidden');
+        text.textContent = 'Ver códigos QR del equipo';
+        icon.classList.remove('rotate-180');
+      }
 
-    if (isHidden) {
-      accordion.classList.remove('hidden');
-      text.textContent = 'Ocultar códigos QR';
-      icon.classList.add('rotate-180');
-    } else {
-      accordion.classList.add('hidden');
-      text.textContent = 'Ver códigos QR del equipo';
-      icon.classList.remove('rotate-180');
+      if (window.lucide) lucide.createIcons();
     }
 
-    if (window.lucide) lucide.createIcons();
-  }
+    // 2. Abrir el modal con animación fluida de Zoom
+    function openQrModal(cardElement) {
+      const img = cardElement.querySelector('img');
+      const name = cardElement.getAttribute('data-name');
+      const role = cardElement.getAttribute('data-role');
 
-  // 2. Abrir el modal con animación fluida de Zoom
-  function openQrModal(cardElement) {
-    const img = cardElement.querySelector('img');
-    const name = cardElement.getAttribute('data-name');
-    const role = cardElement.getAttribute('data-role');
+      const modal = document.getElementById('qrModal');
+      const modalBox = document.getElementById('qrModalBox');
+      const modalImg = document.getElementById('qrModalImg');
+      const modalName = document.getElementById('qrModalName');
+      const modalRole = document.getElementById('qrModalRole');
 
-    const modal = document.getElementById('qrModal');
-    const modalBox = document.getElementById('qrModalBox');
-    const modalImg = document.getElementById('qrModalImg');
-    const modalName = document.getElementById('qrModalName');
-    const modalRole = document.getElementById('qrModalRole');
+      // Asignar datos al modal
+      modalImg.src = img.src;
+      modalName.textContent = name;
+      modalRole.textContent = role;
 
-    // Asignar datos al modal
-    modalImg.src = img.src;
-    modalName.textContent = name;
-    modalRole.textContent = role;
+      // Activar backdrop
+      modal.classList.remove('pointer-events-none', 'opacity-0');
+      modal.classList.add('pointer-events-auto', 'opacity-100');
 
-    // Activar backdrop
-    modal.classList.remove('pointer-events-none', 'opacity-0');
-    modal.classList.add('pointer-events-auto', 'opacity-100');
+      // Animación de pop-up
+      setTimeout(() => {
+        modalBox.classList.remove('scale-90', 'opacity-0');
+        modalBox.classList.add('scale-100', 'opacity-100');
+      }, 10);
 
-    // Animación de pop-up
-    setTimeout(() => {
-      modalBox.classList.remove('scale-90', 'opacity-0');
-      modalBox.classList.add('scale-100', 'opacity-100');
-    }, 10);
-
-    if (window.lucide) lucide.createIcons();
-  }
-
-  // 3. Cerrar el modal con animación de salida
-  function closeQrModal() {
-    const modal = document.getElementById('qrModal');
-    const modalBox = document.getElementById('qrModalBox');
-
-    modalBox.classList.remove('scale-100', 'opacity-100');
-    modalBox.classList.add('scale-90', 'opacity-0');
-
-    modal.classList.remove('opacity-100');
-    modal.classList.add('opacity-0');
-
-    setTimeout(() => {
-      modal.classList.remove('pointer-events-auto');
-      modal.classList.add('pointer-events-none');
-    }, 300);
-  }
-
-  // Cerrar al pulsar la tecla Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeQrModal();
-  });
-
-  // Control del Menú Lateral Móvil
-  function openMobileMenu() {
-    const backdrop = document.getElementById('mobileMenuBackdrop');
-    const drawer = document.getElementById('mobileMenuDrawer');
-
-    // 1. Mostrar el fondo oscuro
-    backdrop.classList.remove('pointer-events-none', 'opacity-0');
-    backdrop.classList.add('pointer-events-auto', 'opacity-100');
-
-    // 2. Deslizar el menú desde la derecha
-    setTimeout(() => {
-      drawer.classList.remove('translate-x-full');
-      drawer.classList.add('translate-x-0');
-    }, 10);
-
-    // Evitar que el fondo haga scroll mientras el menú está abierto
-    document.body.style.overflow = 'hidden';
-
-    if (window.lucide) lucide.createIcons();
-  }
-
-  function closeMobileMenu() {
-    const backdrop = document.getElementById('mobileMenuBackdrop');
-    const drawer = document.getElementById('mobileMenuDrawer');
-
-    // Deslizar de vuelta hacia la derecha
-    drawer.classList.remove('translate-x-0');
-    drawer.classList.add('translate-x-full');
-
-    backdrop.classList.remove('opacity-100');
-    backdrop.classList.add('opacity-0');
-
-    setTimeout(() => {
-      backdrop.classList.remove('pointer-events-auto');
-      backdrop.classList.add('pointer-events-none');
-      // Restaurar el scroll del cuerpo
-      document.body.style.overflow = '';
-    }, 300);
-  }
-
-  // Actualizar el listener de Escape para cerrar el menú si está abierto
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeMobileMenu();
-      if (typeof closeQrModal === 'function') closeQrModal();
+      if (window.lucide) lucide.createIcons();
     }
-  });
+
+    // 3. Cerrar el modal con animación de salida
+    function closeQrModal() {
+      const modal = document.getElementById('qrModal');
+      const modalBox = document.getElementById('qrModalBox');
+
+      modalBox.classList.remove('scale-100', 'opacity-100');
+      modalBox.classList.add('scale-90', 'opacity-0');
+
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+
+      setTimeout(() => {
+        modal.classList.remove('pointer-events-auto');
+        modal.classList.add('pointer-events-none');
+      }, 300);
+    }
+
+    // Cerrar al pulsar la tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeQrModal();
+    });
+
+    // Control del Menú Lateral Móvil
+    function openMobileMenu() {
+      const backdrop = document.getElementById('mobileMenuBackdrop');
+      const drawer = document.getElementById('mobileMenuDrawer');
+
+      // 1. Mostrar el fondo oscuro
+      backdrop.classList.remove('pointer-events-none', 'opacity-0');
+      backdrop.classList.add('pointer-events-auto', 'opacity-100');
+
+      // 2. Deslizar el menú desde la derecha
+      setTimeout(() => {
+        drawer.classList.remove('translate-x-full');
+        drawer.classList.add('translate-x-0');
+      }, 10);
+
+      // Evitar que el fondo haga scroll mientras el menú está abierto
+      document.body.style.overflow = 'hidden';
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeMobileMenu() {
+      const backdrop = document.getElementById('mobileMenuBackdrop');
+      const drawer = document.getElementById('mobileMenuDrawer');
+
+      // Deslizar de vuelta hacia la derecha
+      drawer.classList.remove('translate-x-0');
+      drawer.classList.add('translate-x-full');
+
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0');
+
+      setTimeout(() => {
+        backdrop.classList.remove('pointer-events-auto');
+        backdrop.classList.add('pointer-events-none');
+        // Restaurar el scroll del cuerpo
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    // Actualizar el listener de Escape para cerrar el menú si está abierto
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+        if (typeof closeQrModal === 'function') closeQrModal();
+      }
+    });
   </script>
 </body>
 
